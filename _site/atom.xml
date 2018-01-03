@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>APIs for cats</title>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2018-01-03T07:39:18-08:00</updated>
+ <id>http://localhost:4000</id>
+ <author>
+   <name>Scott Chamberlain</name>
+   <email></email>
+ </author>
+
+ 
+
+</feed>

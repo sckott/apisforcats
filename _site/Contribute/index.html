@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Contribute &middot; APIs for cats
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png"> -->
+  <link rel="fa-angle-right" sizes="144x144" href="/public/fa-angle-right.png">
+  <link rel="shortcut icon" href="/public/fa-angle-right.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>APIs for cats</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item active" href="/Contribute/">Contribute</a>
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+
+<!--     <a class="sidebar-nav-item" href="https://github.com/sckott/apisforcats">Contributors</a> -->
+    <a class="sidebar-nav-item" href="https://github.com/sckott/apisforcats/raw/gh-pages/index.pdf">Download pdf</a>
+    <a class="sidebar-nav-item" href="https://github.com/sckott/apisforcats">Code on Github</a>
+    <!-- <span class="sidebar-nav-item">Currently v</span> -->
+  </nav>
+
+  <!-- <div class="sidebar-item">
+    <p>
+      &copy; 2018. All rights reserved.
+    </p>
+  </div> -->
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">APIs for cats</a>
+            <small>and cat lovers</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">Contribute</h1>
+  <ul>
+  <li><a href="#howcontrib">How to contribute</a>
+    <ul>
+      <li><a href="#git">Cats for git!!</a></li>
+      <li><a href="#gitlessr">Love git - i’m so so on R</a></li>
+      <li><a href="#nogit">What’s git?</a></li>
+      <li><a href="#issue">I just wanna say something</a></li>
+    </ul>
+  </li>
+  <li><a href="#contributors">Contributors</a></li>
+</ul>
+
+<h2 id="-how-to-contribute"><a href="#howcontrib" name="howcontrib">#</a> How to contribute</h2>
+
+<p><a href="#git" name="git">#</a> <strong>If you like git</strong></p>
+
+<ol>
+  <li>Fork <a href="https://github.com/sckott/rforcats">https://github.com/sckott/rforcats</a> to your account</li>
+  <li>Clone down to your machine from your account</li>
+  <li>Add an upstream remote for the <code class="highlighter-rouge">sckott/rforcats</code> repo by doing <code class="highlighter-rouge">git remote add upstream git@github.com:sckott/rforcats.git</code></li>
+  <li>Make a new feature branch</li>
+  <li>The only file to change is <code class="highlighter-rouge">index.Rmd</code>. It’s a R markdown document, which is essentially just Markdown, so should be easy to add to/change. After you make your changes, run <code class="highlighter-rouge">knit("index.Rmd")</code> in R, which will build a new <code class="highlighter-rouge">index.md</code>. If you have time/interest, also build the html page by doing <code class="highlighter-rouge">jekyll build</code>. This requires <code class="highlighter-rouge">jekyll</code> of course. You can also preview the site by doing <code class="highlighter-rouge">jeyll serve</code>, then navigate in your browser to <a href="http://localhost:4000">http://localhost:4000</a></li>
+  <li>Commit those changes and push to your account</li>
+  <li>Send a pull request to <code class="highlighter-rouge">sckott/rforcats</code></li>
+</ol>
+
+<p><a href="#gitlessr" name="gitlessr">#</a> <strong>If you like git, but aren’t that familiar with R</strong></p>
+
+<ol>
+  <li>Fork <a href="https://github.com/sckott/rforcats">https://github.com/sckott/rforcats</a> to your account</li>
+  <li>Clone down to your machine from your account</li>
+  <li>Add an upstream remote for the <code class="highlighter-rouge">sckott/rforcats</code> repo by doing <code class="highlighter-rouge">git remote add upstream git@github.com:sckott/rforcats.git</code></li>
+  <li>Make a new feature branch</li>
+  <li>The only file to change is <code class="highlighter-rouge">index.Rmd</code>. It’s a R markdown document, which is essentially just Markdown, so should be easy to add to/change.</li>
+  <li>Commit changes and push to your account</li>
+  <li>Send a pull request to <code class="highlighter-rouge">sckott/rforcats</code></li>
+</ol>
+
+<p><a href="#nogit" name="nogit">#</a> <strong>If you don’t like git (or, <em>I don’t know what git is</em>)</strong></p>
+
+<ol>
+  <li>Go to the <a href="https://github.com/sckott/rforcats/blob/gh-pages/index.Rmd">index.Rmd file</a> in the <code class="highlighter-rouge">rforcats</code> GitHub repository</li>
+  <li>Edit whatever you want</li>
+  <li>Then write a message in the box at the bottom, and press the green button <em>Propose file change</em>. This will make a fork of the repo to your github account. You then can write any other message you want and press another green button <em>Send pull request</em></li>
+  <li>The end!</li>
+</ol>
+
+<p><a href="#issue" name="issue">#</a> <strong>Issues/bugs/questions/feature requests</strong></p>
+
+<p>If you want to submit an issue (bug report/question/feature request/etc.), go to the <a href="https://github.com/sckott/rforcats/issues?state=open">issues page</a> and do that.</p>
+
+<p>Thanks for contributing whether you or your cat wrote the code!!!!!</p>
+
+<h2 id="-contributors"><a href="#contributors" name="contributors">#</a> Contributors</h2>
+
+<h3 id="people">people</h3>
+
+<ul>
+  <li>Scott Chamberlain <a href="https://github.com/sckott">@sckott</a></li>
+  <li>Carson Sievert <a href="https://github.com/cpsievert">@cpsievert</a></li>
+  <li>Ben Marwick <a href="https://github.com/benmarwick">@benmarwick</a></li>
+  <li>Noam Ross <a href="https://github.com/noamross">@noamross</a></li>
+  <li>Zach Stednick <a href="https://github.com/stedy">@stedy</a></li>
+  <li>Jeffrey Hollister <a href="https://github.com/jhollist">@jhollist</a></li>
+  <li>mustafaascha <a href="https://github.com/mustafaascha">@mustafaascha</a></li>
+  <li>Peter Desmet <a href="https://github.com/peterdesmet">@peterdesmet</a></li>
+  <li>You?</li>
+</ul>
+
+<h3 id="cats">cats</h3>
+
+<ul>
+  <li>the orange fur ball at the bottom of the page: <em>Leo</em> (aka <em>boom boom</em>, <em>muffin</em>, <em>goose</em>, <em>goosie</em>, <em>bumpkin</em>, <em>goosebump</em>, <em>kitten face</em>, <em>kitten butt</em>, <em>monkey</em>, <em>monkey butt</em>, <em>sa sa</em>, <em>leo the lion</em>, and more)</li>
+</ul>
+
+</div>
+
+
+    <!-- CC0 license image -->
+    <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+      <a rel="license"
+         href="https://creativecommons.org/publicdomain/zero/1.0/">
+        <img src="https://licensebuttons.net/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
+      </a>
+      <!-- <br /> -->
+      <font size="3">To the extent possible under law,
+      <span resource="[_:publisher]" rel="dct:publisher">
+        <span property="dct:title">Scott Chamberlain</span></span>
+      has waived all copyright and related or neighboring rights to
+      <span property="dct:title">rforcats</span>.
+    This work is published from:
+    <span property="vcard:Country" datatype="dct:ISO3166"
+          content="US" about="[_:publisher]">
+      United States</span>.</font>
+    </p>
+
+    </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <!-- google analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-63230317-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!--[if !(lt IE 8)]><!-->
+    <script type="text/javascript">
+      (function(){
+        var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
+        e.src = 'https://www.eff.org/doa/widget.min.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
+      })();
+    </script>
+    <!--<![endif]-->
+
+  </body>
+</html>
