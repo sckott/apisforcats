@@ -104,39 +104,127 @@
       <div class="container content">
         <h2 id="an-intro-to-apis-for-r-users">An intro to APIs for R users</h2>
 
-<p>This is an introduction to working with APIs in R. I promise this will be fun.</p>
+<p>This is an introduction to working with APIs in R. We promise this will be fun.</p>
 
-<p>xxx</p>
+<p>This introduction assumes basic knowledge of the R language. If you need to get that
+check out <a href="https://rforcats.net">https://rforcats.net</a>.</p>
 
 <h2 id="table-of-contents">Table of contents</h2>
 
 <ul>
+  <li><a href="#dirty">Let’s get our paws dirty first</a></li>
   <li><a href="#definitions">Definitions</a></li>
   <li><a href="#serverclient">Server-Client</a></li>
   <li><a href="#urls">URLs</a></li>
   <li><a href="#install">Install things</a></li>
   <li><a href="#get">Your first GET request</a></li>
+  <li><a href="#statuscodes">Status codes</a></li>
   <li><a href="#reading">Reading</a></li>
-  <li><a href="#makeitbetter">Does this site suck?</a></li>
+  <li><a href="#makeitbetter">Want this page to be better?</a></li>
 </ul>
+
+<h2 id="-get-dirty"><a href="#dirty" name="dirty">#</a> Get dirty</h2>
+
+<p>Here, we’ll just use a web browser - since you’re reading this in a browser, this
+should be doable for every cat!</p>
+
+<p>First, let’s have some fun with cat pics. Head over to <a href="https://http.cat/">https://http.cat/</a> in your 
+favorite browser. This API give back a different cat image for each of the HTTP 
+status codes (you may not be familiar with this, <a href="#statuscodes">read below</a>).</p>
+
+<p>Try <a href="https://http.cat/200">https://http.cat/200</a></p>
+
+<p>That’s for a <code class="highlighter-rouge">200</code> HTTP status code, which means a successful request!</p>
+
+<p>Now try <a href="https://http.cat/500">https://http.cat/500</a></p>
+
+<p>The <code class="highlighter-rouge">500</code> HTTP status code means something went wrong on the server. Oh no!</p>
+
+<hr />
+
+<p>Next, let’s try an API that gives back text.</p>
+
+<p><a href="https://catfact.ninja/fact">https://catfact.ninja/fact</a></p>
+
+<p>Click on the above link or paste it into another tab. You should be back something like:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"fact"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cat's urine glows under a black light."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>That text based data is called JSON. Read about it in the next section.</p>
 
 <h2 id="-definitions"><a href="#definitions" name="definitions">#</a> Definitions</h2>
 
-<p>xxxx</p>
+<ul>
+  <li>API:</li>
+  <li>URL:</li>
+  <li>HTTP:</li>
+  <li>JSON:</li>
+  <li>Server:</li>
+  <li>Client:</li>
+</ul>
 
 <h2 id="-server-client"><a href="#serverclient" name="serverclient">#</a> Server-Client</h2>
 
-<p>xxxx</p>
+<p>With any API you work with you there is an interaction between a server
+and a client.</p>
+
+<p>A server is most often running on the cloud (e.g. <a href="https://aws.amazon.com/">Amazon</a>, <a href="https://www.digitalocean.com/">DigitalOcean</a>) and 
+has a set of code for handling how to react to requests.</p>
+
+<p>A client is any entity making requests to the server. A client can be a 
+browser (desktop or mobile), a command line utility like <a href="https://curl.haxx.se/">curl</a>, or a 
+R program.</p>
 
 <h2 id="-urls"><a href="#urls" name="urls">#</a> URLs</h2>
 
-<p>xxx</p>
+<p>URLs are the most fundamental part of working with APIs. Every API you’ll work with is 
+found at some URL.</p>
+
+<p>Let’s go over the structure of a URL. A URL is made up of the following parts:</p>
+
+<ul>
+  <li>scheme: <code class="highlighter-rouge">http</code> or <code class="highlighter-rouge">https</code></li>
+  <li>base: includes domain e.g. “cats.com”</li>
+  <li>path: any number of paths after the base, separated by <code class="highlighter-rouge">/</code>, e.g., <code class="highlighter-rouge">/cat/kitty</code></li>
+  <li>query parameters: key-value pairs after a <code class="highlighter-rouge">?</code>, e.g., <code class="highlighter-rouge">?query=salmon</code></li>
+</ul>
+
+<p>The former two are mandatory: You need a scheme and base. The latter two - path and 
+query parameters - are optional.</p>
+
+<p>To put it all together:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>URL = scheme + base + path + query parameters
+</code></pre></div></div>
+
+<p>For example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://http.cat/404 = scheme (https) + base (http.cat) + path (404)
+</code></pre></div></div>
+
+<p>The neat thing about URLs is that you can often pop them into your favorite web 
+browser and test them out.</p>
 
 <h2 id="-install"><a href="#install" name="install">#</a> Install</h2>
 
-<p>xxx</p>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="s2">"crul"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
 
 <h2 id="-your-first-get-request"><a href="#get" name="get">#</a> Your first GET request</h2>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">connection</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">crul</span><span class="o">::</span><span class="n">HttpClient</span><span class="o">$</span><span class="n">new</span><span class="p">(</span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://catfact.ninja"</span><span class="p">)</span><span class="w">
+</span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">connection</span><span class="o">$</span><span class="n">get</span><span class="p">(</span><span class="s1">'fact'</span><span class="p">)</span><span class="w">
+</span><span class="n">result</span><span class="o">$</span><span class="n">parse</span><span class="p">(</span><span class="s2">"UTF-8"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#&gt; [1] "{\"fact\":\"There is a species of cat smaller than the average housecat. It is native to Africa and it is the Black-footed cat (Felis nigripes). Its top weight is 5.5 pounds.\",\"length\":162}"
+</code></pre></div></div>
+
+<h2 id="-status-codes"><a href="#statuscodes" name="statuscodes">#</a> Status codes</h2>
 
 <p>xxx</p>
 
@@ -149,6 +237,7 @@
 <p>Contribute by following <a href="/Contribute">these instructions</a>.</p>
 
 <h2 id="-license"><a href="#license" name="license">#</a> License</h2>
+
 
 
     <!-- CC0 license image -->
