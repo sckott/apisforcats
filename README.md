@@ -1,9 +1,9 @@
 apisforcats
 ===========
 
-Inspired by [jsforcats.com](http://jsforcats.com/) - __apisforcats__ is aimed at teaching cats how to work with APIs in R.
+Learn how to work with APIs in R.
 
-## people
+## contributors
 
 * Scott Chamberlain [@sckott](https://github.com/sckott)
 * You?
