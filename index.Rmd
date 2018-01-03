@@ -103,7 +103,7 @@ Let's go over the structure of a URL. A URL is made up of the following parts:
 - scheme: `http` or `https`
 - base: includes domain e.g. "cats.com"
 - path: any number of paths after the base, separated by `/`, e.g., `/cat/kitty`
-- query parameters: key-value pairs after a `?`, e.g., `?query=salmon`
+- query parameters: key-value pairs after a `?`, e.g., `?query=tilapia`
 
 The former two are mandatory: You need a scheme and base. The latter two - path and 
 query parameters - are optional. 

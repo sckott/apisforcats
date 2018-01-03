@@ -94,7 +94,7 @@ Let's go over the structure of a URL. A URL is made up of the following parts:
 - scheme: `http` or `https`
 - base: includes domain e.g. "cats.com"
 - path: any number of paths after the base, separated by `/`, e.g., `/cat/kitty`
-- query parameters: key-value pairs after a `?`, e.g., `?query=salmon`
+- query parameters: key-value pairs after a `?`, e.g., `?query=tilapia`
 
 The former two are mandatory: You need a scheme and base. The latter two - path and 
 query parameters - are optional. 
@@ -132,7 +132,7 @@ result$parse("UTF-8")
 ```
 
 ```
-#> [1] "{\"fact\":\"There is a species of cat smaller than the average housecat. It is native to Africa and it is the Black-footed cat (Felis nigripes). Its top weight is 5.5 pounds.\",\"length\":162}"
+#> [1] "{\"fact\":\"The biggest wildcat today is the Siberian Tiger. It can be more than 12 feet (3.6 m) long (about the size of a small car) and weigh up to 700 pounds (317 kg).\",\"length\":158}"
 ```
 
 ## <a href="#statuscodes" name="statuscodes">#</a> Status codes
